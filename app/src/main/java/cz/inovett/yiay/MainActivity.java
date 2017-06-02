@@ -1,6 +1,8 @@
 package cz.inovett.yiay;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,11 +16,14 @@ import com.google.firebase.appindexing.builders.Actions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import cz.inovett.yiay.models.Main2Activity;
 import cz.inovett.yiay.models.Questions;
 
 public class MainActivity extends AppCompatActivity {
+    FloatingActionButton floatingActionButton;
     private DatabaseReference databaseReference;
     private RecyclerView blogList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +32,14 @@ public class MainActivity extends AppCompatActivity {
         blogList.setHasFixedSize(true);
         blogList.setLayoutManager( new LinearLayoutManager(this));
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Questions");
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton2);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(i);
+            }
+        });
 
     }
 
@@ -43,14 +56,15 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void populateViewHolder(BlogViewHolder viewHolder, Questions model, int position) {
             viewHolder.setTitle(model.getTitle());
+            final String post_key = getRef(position).getKey();
 
             viewHolder.view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    /*Intent singleBlogInetnt = new Intent(MainActivity.this, BlogSingleActivity.class);
-                        /*singleBlogInetnt.putExtra("blog_id", post_key);
-                    startActivity(singleBlogInetnt);*/
+                    Intent singleBlogInetnt = new Intent(MainActivity.this, BlogSingleActivity.class);
+                    singleBlogInetnt.putExtra("blog_id", post_key);
+                    startActivity(singleBlogInetnt);
                 }
             });
 

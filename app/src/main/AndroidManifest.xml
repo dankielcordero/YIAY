@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".CommentActivity" />
-        <activity android:name=".models.Main2Activity"></activity>
+        <activity android:name=".models.Main2Activity" />
+        <activity android:name=".BlogSingleActivity"></activity>
     </application>
 
 </manifest>
