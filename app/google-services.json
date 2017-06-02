@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "539326787714",
+    "firebase_url": "https://yiay-55592.firebaseio.com",
+    "project_id": "yiay-55592",
+    "storage_bucket": "yiay-55592.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539326787714:android:f784cbadbe760871",
+        "android_client_info": {
+          "package_name": "cz.inovett.yiay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539326787714-i159qcfdm0tolgfsh10bepb37il990j9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA-0g4YxI-63u5Gkmp3il9Ru-imwHmo04"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
